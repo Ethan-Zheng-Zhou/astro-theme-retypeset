@@ -1,8 +1,8 @@
 export const ui = {
   'zh': {
-    title: '灵感インスピレーション',
-    subtitle: '分享我遇到的问题',
-    description: 'Retypeset是一款基于Astro框架的静态博客主题，中文名为重新编排。本主题以活版印字为设计灵感，通过建立全新的视觉规范，对所有页面进行重新编排，打造纸质书页般的阅读体验，再现版式之美。所见皆为细节，方寸尽显优雅。',
+    title: 'Ethan\'s Blog ',
+    subtitle: '保持思考',
+    description: 'Ethan 的博客',
     posts: '文章',
     tags: '标签',
     about: '关于',
