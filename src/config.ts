@@ -137,6 +137,10 @@ export const themeConfig: ThemeConfig = {
     // social links
     links: [
       {
+        name: 'HomePage',
+        url: 'https://www.ethanzhou.cn',
+      },
+      {
         name: 'RSS',
         url: '/rss.xml', // rss.xml, atom.xml
       },
