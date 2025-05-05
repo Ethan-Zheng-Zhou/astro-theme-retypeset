@@ -1,6 +1,6 @@
 ---
 # 必填
-title: "ASP.NET期末复习Lecture11 : 模型绑定与表单助手"
+title: "ASP.NET期末复习Lecture12 : Entity Framework Core 简介"
 published: 2025-05-05
 
 # 可选
