@@ -1,6 +1,6 @@
 ---
 # 必填
-title: "ASP.NET期末复习Lecture15 : 进阶 CRUD 操作"
+title: "ASP.NET期末复习Lecture16 : EF Core的数据关系"
 published: 2025-05-05
 
 # 可选
