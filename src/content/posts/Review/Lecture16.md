@@ -11,7 +11,7 @@ tags:
 # 进阶，可选
 pin: 14
 toc: true
-abbrlink: 'asp-lecture14'
+abbrlink: 'asp-lecture16'
 ---
 
 第十六课主要讲解了在 ASP. NET 应用开发中使用 Entity Framework Core 处理数据关系的三种类型：**一对多、一对一、多对多**。

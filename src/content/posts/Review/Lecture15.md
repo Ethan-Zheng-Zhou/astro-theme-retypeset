@@ -11,7 +11,7 @@ tags:
 # 进阶，可选
 pin: 13
 toc: true
-abbrlink: 'asp-lecture14'
+abbrlink: 'asp-lecture15'
 ---
 
 第十五课主要关注 CRUD 操作的复杂关系
