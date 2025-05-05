@@ -83,7 +83,7 @@ public class EmployeeRepository : IEmployeeRepository {
   </form>
   ```
 
-![](https://cdn.ethanzhou.cn/i/2025/05/05/6818bc686662a.jpg)
+![实例](https://cdn.ethanzhou.cn/i/2025/05/05/6818bc686662a.jpg)
 
 ---
 ## 二、标签助手 (Tag Helpers)
