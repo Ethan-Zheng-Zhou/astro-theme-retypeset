@@ -9,6 +9,7 @@ tags:
   - 期末复习
 
 # 进阶，可选
+pin: 10
 toc: true
 abbrlink: 'asp-lecture12'
 ---
