@@ -15,6 +15,7 @@ abbrlink: 'asp-lecture11'
 ---
 
 
+
 第十一次课主要讲解了 ASP. NET Core 中的模型绑定 (Model Binding) 和标签助手 (Tag Helpers) 技术，并通过员工管理系统的增删改查 (CRUD) 功能实现来演示这些技术的实际应用。
 
 ---
@@ -83,7 +84,7 @@ public class EmployeeRepository : IEmployeeRepository {
   </form>
   ```
 
-![实例](https://cdn.ethanzhou.cn/i/2025/05/05/6818bc686662a.jpg)
+![](https://cdn.ethanzhou.cn/i/2025/05/05/6818bc686662a.jpg)
 
 ---
 ## 二、标签助手 (Tag Helpers)
