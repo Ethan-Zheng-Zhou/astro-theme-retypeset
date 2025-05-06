@@ -33,8 +33,9 @@ const MarginBottom = isPost && themeConfig.comment?.enabled
   data-overlayscrollbars-initialize
 >
   <Head {postTitle} {postDescription} {postSlug} />
+  <link rel="stylesheet" href="https://ai.tianli0.top/static/public/tianli_gpt.min.css" />
   <body data-overlayscrollbars-initialize>
-
+  
     <div
       class="mx-auto max-w-205.848 min-h-vh w-full min-h-dvh"
       p="x-[min(7.25vw,3.731rem)] y-9"
@@ -50,5 +51,10 @@ const MarginBottom = isPost && themeConfig.comment?.enabled
     <Scrollbar />
     <Button supportedLangs={supportedLangs} />
     <PhotoSwipe />
+    <script>
+      let tianliGPT_postSelector = 'article';
+      let tianliGPT_key = 'ks7onxNJVvL';
+    </script>
+    <script src="https://ai.tianli0.top/static/public/tianli_gpt.min.js"></script>
   </body>
 </html>
