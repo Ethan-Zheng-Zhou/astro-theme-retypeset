@@ -43,7 +43,9 @@ EF Core 通过提供程序模型支持多种数据库，其模块化特性允许
 
 ```
 Microsoft.EntityFrameworkCore 
-Microsoft.EntityFrameworkCore.Design Microsoft.EntityFrameworkCore.Relational Microsoft.EntityFrameworkCore.SqlServer 
+Microsoft.EntityFrameworkCore.Design 
+Microsoft.EntityFrameworkCore.Relational 
+Microsoft.EntityFrameworkCore.SqlServer 
 Microsoft.EntityFrameworkCore.Tools
 ```
 
