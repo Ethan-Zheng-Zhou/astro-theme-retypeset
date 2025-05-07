@@ -11,7 +11,7 @@ tags:
 # 进阶，可选
 pin: 15
 toc: true
-abbrlink: 'asp-EfCore1'
+abbrlink: 'asp-efcore1'
 ---
 
 ## 碎碎念
