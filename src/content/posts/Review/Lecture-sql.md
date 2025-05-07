@@ -1,6 +1,6 @@
 ---
 # 必填
-title: "ASP.NET开发: 使用 Entity Framwork Core 操作数据库"
+title: "ASP.NET应用开发入门: EF Core与基础数据操作"
 published: 2025-05-07
 
 # 可选
@@ -11,13 +11,14 @@ tags:
 # 进阶，可选
 pin: 15
 toc: true
-abbrlink: 'asp-lecture-sqlserver'
+abbrlink: 'asp-EfCore1'
 ---
 
 ## 碎碎念
 
 ASP. NET 开发在现如今已经算是"过时"的技术了，在网上搜索也很难找到高质量的博客/视频教程。 Ethan 因为选课失误不得不去学习这门技术，考点里重点之一就是使用 EF Core 操作数据库，苦苦搜寻找不到一个明确的文档教程，所以写下这篇文章以供南邮的学弟学妹们进行期末复习，文章里使用的例子均来自于《ASP. NET 应用开发 (双语) 》课程提供的课件与实验，请放心食用。
 这篇文章从零开始使用 EF Core 实现了一个简单的员工管理系统，源码可以到 [Ethan的云盘](https://cloud.ethanzhou.cn) 中进行下载，文件名为 `EF-Core 博客源码.rar`。
+
 ---
 ## 1. How to use EF Core?
 ### 1.1 EF Core 简介与添加流程
