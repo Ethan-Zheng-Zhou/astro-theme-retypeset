@@ -181,13 +181,13 @@ dotnet ef migrations add InitialSchema
 -  Migration designer. cs file
 -  AppDbContextModelSnapshot. cs
 
-![](https://cdn.ethanzhou.cn/i/2025/05/07/681b29d85b744.jpg)
+![生成的三个文件](https://cdn.ethanzhou.cn/i/2025/05/07/681b29d85b744.jpg)
 
 `Timestamp_MigrationName. cs ` 格式的迁移文件（Migration file）描述了对数据库采取的操作，例如创建表或添加列。
 
 `Migration designer.cs ` 文件描述了生成迁移时 EF Core 的内部数据模型。
 
-`AppDbContextModelSnapshot. cs` 文件描述了 EF Core 当前的内部模型,，添加另一个迁移时会更新此文件，因此它应始终与当前（最新）迁移相同。EF Core 可以在创建新迁移时使用 `AppDbContextModelSnapshot. cs`  来确定数据库的先前状态，而无需直接与数据库交互。
+`AppDbContextModelSnapshot. cs` 文件描述了 EF Core 当前的内部模型,，添加另一个迁移时会更新此文件，因此它应始终与当前（最新）迁移相同。EF Core 可以在创建新迁移时使用这个文件来确定数据库的先前状态，而无需直接与数据库交互。
 
 
 特别要注意的是，添加迁移不会更新数据库本身中的任何内容，必须运行其他命令才能将迁移应用于数据库。
@@ -251,7 +251,7 @@ dotnet ef database drop ‐‐force
 
 数据操作的关键是 `DbSet<T>` 类。
 
-```C#
+```csharp
 public class AppDbContext: DbContext 
 {  
 	...... 
@@ -267,7 +267,7 @@ public class AppDbContext: DbContext
 
 `Find（key）` 方法读取表中具有指定键的行，并返回表示该行的对象。
 
-```C#
+```Csharp
 dbContext.Employees.Find(id)
 ```
 
@@ -277,7 +277,7 @@ dbContext.Employees.Find(id)
 
 想象你有一个快递仓库（数据库），里面有一堆包裹（`Employee` 数据）。  `DbContext` 就像你的仓库管理员，而 `DbSet<Employee>` 是管理员手里的一个 **未拆封的包裹清单**（还没真正去仓库里拿东西）。当你真正用代码遍历清单（比如 `. ToList ()` 或 `foreach`），管理员才会跑去仓库，把包裹一个个搬出来（从数据库查询数据）。   
 
-```c#
+```csharp
 Var employees = dbContext.Employees.ToList (); // 这时才查数据库！
 ```
 
@@ -285,7 +285,7 @@ Var employees = dbContext.Employees.ToList (); // 这时才查数据库！
 
 继续我们在第一节提到的跨国公司员工管理系统的例子来讲解数据操作，我们首先创建两个仓储接口 (repository interface) 用于定义对数据对象的操作：
 
-```C#
+```csharp
 /Model/IEmployeeRepository.cs
 
 public interface IEmployeeRepository
@@ -294,7 +294,7 @@ public interface IEmployeeRepository
 }
 ```
 
-```C#
+```csharp
 /Model/ICountryRepository.cs
 
 public interface IEmployeeRepository
@@ -305,7 +305,7 @@ public interface IEmployeeRepository
 
 两个接口的具体实现如下：
 
-```c#
+```csharp
 /Model/EmployeeRepository.cs
 
 public class EmployeeRepository: IEmployeeRepository
@@ -323,7 +323,7 @@ public class EmployeeRepository: IEmployeeRepository
 
 ```
 
-```c#
+```csharp
 /Model/EmployeeRepository.cs
 
 public class CountryRepository: ICountryRepository
@@ -342,13 +342,13 @@ public class CountryRepository: ICountryRepository
 
 当然我们要进行依赖注入的配置。`AddTransient` 方法确保每次解析对 ` IRepository` 的依赖关系时都会创建一个新的 ` Repository` 对象。
 
-```C#
+```csharp
 services.AddTransient<IEmployeeRepository,EmployeeRepository>(); services.AddTransient<ICountryRepository, CountryRepository>();
 ```
 
 我们想使用取出来的所有员工数据对象，控制器的创建就可以如下：
 
-```C#
+```csharp
 /Controller/EmployeeController.cs
 
 Public class EmployeeManagerController : Controller 
@@ -400,7 +400,7 @@ Public class EmployeeManagerController : Controller
 
 `Add` 和 `AddRange` 方法就好像管理员往清单上加了包裹数据，`SaveChanges` 方法才是管理员把包裹往仓库里面放。
 
-```C#
+```Csharp
 context.Employees.Add(newEmployee); 
 context.SaveChanges();
 ```
@@ -409,7 +409,7 @@ context.SaveChanges();
 
 我们更新一下 `ICountryRepository`：
 
-```C#
+```csharp
 /Model/ICountryRepository.cs
 
 public interface IEmployeeRepository
@@ -422,7 +422,7 @@ public interface IEmployeeRepository
 
 方法实现如下：
 
-```C#
+```csharp
 public void CreateTestData()
 {
 	//删除数据表所有数据
@@ -445,7 +445,7 @@ public void CreateTestData()
 
 更新 `EmployeeController.cs`:
 
-```C#
+```csharp
 /Controller/EmployeeController.cs
 
 Public class EmployeeManagerController : Controller 
@@ -485,13 +485,13 @@ Public class EmployeeManagerController : Controller
 
 为了更好的模拟用户通过表单输入登记的场景，我们可以往 Repository Interface 里添加如下方法：
 
-```C#
+```csharp
 void Insert(Employee emp);
 ```
 
 具体实现如下：
 
-```C#
+```csharp
 public void Insert(Employee emp) 
 {  
 	context.Employees.Add(emp); 
@@ -501,7 +501,7 @@ public void Insert(Employee emp)
 
 增加控制器方法以使用 Repository Interface 的新增功能：
 
-```C#
+```csharp
 public IActionResult Insert(Employee model)
 {
 	repo.Insert(Employee emp);
@@ -541,7 +541,7 @@ public IActionResult Insert(Employee model)
 
 我们可以在控制器里增加如下的方法：
 
-```C#
+```csharp
 public IActionResult Insert()
 {
 	List<SelectListItem> countries =(from c in crepo.SelectAll()orderby c.CountryName ascending select new SelectListItem()
@@ -556,7 +556,7 @@ public IActionResult Insert()
 
 在对应的 Razor 视图中添加如下的复选框：
 
-```C#
+```csharp
 <td> 
 	<select asp‐for="Country" asp‐items="@ViewBag.Countries"> 
 		<option value="">Please select</option> 
@@ -570,16 +570,17 @@ public IActionResult Insert()
 
 更新数据可以使用 `Update` 方法：
 
-```C#
+```csharp
 context.Employees.Update(changedEmployee); 
 context.SaveChanges();
 ```
+
 
 ### 2.9 删除数据
 
 删除数据可以使用 `Remove` 方法：
 
-```C#
+```csharp
 context.Employees.Remove(e); 
 context.SaveChanges();
 ```
