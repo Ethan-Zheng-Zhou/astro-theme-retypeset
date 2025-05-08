@@ -79,6 +79,12 @@ const MarginBottom = isPost && themeConfig.comment?.enabled
         const script = document.createElement('script');
         script.src = 'https://ai.tianli0.top/static/public/tianli_gpt.min.js';
         document.body.appendChild(script);
+
+        // 调用作者提供的方法
+        script.onload = () => {
+          postchat_checkSystemType();
+          window.tianliGPT.checkURLAndRun();
+        };
       });
     </script>
     
