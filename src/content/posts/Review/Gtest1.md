@@ -234,6 +234,7 @@ sorrow.../
 如下图红框所示：
 
 ![](https://cdn.ethanzhou.cn/i/2025/05/09/681d967e3bf7c.png)
+
 ### 2.5 编写测试用例
 
 采用 **等价类划分** 与 **边界值分析（Boundary Value Analysis, BVA）**方法，构建任务一测试用例,具体步骤如下：
