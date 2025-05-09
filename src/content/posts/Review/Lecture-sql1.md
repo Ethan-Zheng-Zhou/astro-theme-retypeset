@@ -9,7 +9,7 @@ tags:
   - 期末复习
 
 # 进阶，可选
-pin: 16
+pin: 2
 toc: true
 abbrlink: 'asp-efcore2'
 ---
