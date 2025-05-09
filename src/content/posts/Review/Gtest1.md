@@ -14,7 +14,6 @@ toc: true
 abbrlink: 'softwaretest-gtest1'
 ---
 
-
 ## 碎碎念
 
 单元测试是项目中非常重要的一个环节。在开发的过程中，应该养成每实现一个小模块就相应地做一系列单元测试的习惯，以保证系统中每个单独模块的正确性。系列文章将以某品牌拖地机器人时间戳被错误设置为背景，您需要通关三个任务，以入门 Gtest 框架使用方法和单元测试。
@@ -442,7 +441,7 @@ cd build
 > Tips: GTest的测试结果只有文本输出，需要引入第三方软件才能有比较好看的可视化结果。官方推荐的是GTest Runner和GoogleTest UI.
 > 
 > 这里推荐一个VSCode里的可视化插件：[C++ TestMate](https://marketplace.visualstudio.com/items?itemName=matepek.vscode-catch2-test-adapter)，使用该插件运行测试样例，可以得到下面的可视化结果：
-> ![](https://lumiowo.github.io/2021/01/17/CMake-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%92%8CGoogleTest%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/image-20210117205156858.png)
+> ![](https://cdn.ethanzhou.cn/i/2025/05/09/681d9c39edf70.png)
 
 ### **3.3 断言宏 `ASSERT_*()`和`EXPECT_*()`**
 

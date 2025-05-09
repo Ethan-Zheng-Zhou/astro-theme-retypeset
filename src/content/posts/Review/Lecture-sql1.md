@@ -1,6 +1,6 @@
 ---
 # 必填
-title: "ASP.NET应用开发: LINQ 与数据对象关系"
+title: "ASP.NET应用开发入门: LINQ 与数据对象关系"
 published: 2025-05-07
 
 # 可选
