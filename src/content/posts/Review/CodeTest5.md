@@ -8,7 +8,7 @@ tags:
   - 软件测试
   - 白盒测试
 # 进阶，可选
-pin: 13
+pin: 12
 toc: true
 abbrlink: 'softwaretest-codetest5'
 ---
