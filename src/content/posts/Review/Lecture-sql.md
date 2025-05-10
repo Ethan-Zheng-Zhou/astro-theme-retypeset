@@ -71,7 +71,7 @@ EF Core 通过 DbContext（可以理解为你数据库的抽象类）和实体�
 
 我们以跨国公司员工管理系统为背景，定义其需要的数据模型（POCO 类）：
 
-```C#
+```csharp
 /Model/Country.cs
 
 public class Country
@@ -82,7 +82,7 @@ public class Country
 
 ```
 
-```C#
+```csharp
 /Model/Employee.cs
 
 public class Employee 
@@ -99,7 +99,7 @@ public class Employee
 - 构造函数接收一个 `DbContextOptions<T>` 对象，其中 T 是 Context 类。
 - 构造函数参数将为 Entity Framework Core 提供连接到数据库服务器所需的配置信息。
 
-```C#
+```csharp
 /Model/AppContext.cs
 
 using Microsoft.EntityFrameworkCore; 
@@ -127,7 +127,8 @@ public class AppDbContext : DbContext
 ```json
 "ConnectionStrings": 
 { 
-"DefaultConnection": "Server=(localdb)\\MSSQLLocalDB; 			 Database=EmployeeManager; 
+"DefaultConnection": "Server=(localdb)\\MSSQLLocalDB; 			 
+Database=EmployeeManager; 
 Trusted_Connection=True;
 MultipleActiveResultSets=true" 
 }
@@ -140,7 +141,7 @@ MultipleActiveResultSets=true"
 
 在你的 `Program.cs` 启用数据库服务
 
-```C#
+```csharp
 using Microsoft.EntityFrameworkCore;  
 
 var builder = WebApplication.CreateBuilder(args); 
@@ -271,7 +272,7 @@ public class AppDbContext: DbContext
 
 `Find（key）` 方法读取表中具有指定键的行，并返回表示该行的对象。
 
-```Csharp
+```csharp
 dbContext.Employees.Find(id)
 ```
 
@@ -404,7 +405,7 @@ Public class EmployeeManagerController : Controller
 
 `Add` 和 `AddRange` 方法就好像管理员往清单上加了包裹数据，`SaveChanges` 方法才是管理员把包裹往仓库里面放。
 
-```Csharp
+```csharp
 context.Employees.Add(newEmployee); 
 context.SaveChanges();
 ```
